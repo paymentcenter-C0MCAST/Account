@@ -1,0 +1,21 @@
+
+/* DTM Refactoring for all the code bases*/
+
+if (window.location.href.toLowerCase().indexOf("//customer") > -1 && _satellite.getVar("DataLayer : pageName final").toLowerCase().indexOf("myaccount") > -1) {
+    // MyAccount Page
+    _satellite.track("MyAccount_Custom_Page_Load");
+ 
+} else if (_satellite.getVar("DataLayer : primaryCategory final").toLowerCase() === "shop" && _satellite.getVar("DataLayer : subCategory1 final").toLowerCase() === "learn") {
+    // Deals and Learn Pages
+    _satellite.track("Deals_Custom_Page_Load");
+} else if (window.location.hostname.toLowerCase().indexOf("idm") === 0) {
+    // IDM Page
+    _satellite.track("CIMA_IDM_Custom_Page_Load");
+} else if (_satellite.getVar("DataLayer : primaryCategory final").toLowerCase().indexOf("shop") > -1 && _satellite.getVar("DataLayer : subCategory1 final").toLowerCase().indexOf("buyflow") > -1 && document.location.href.indexOf('/buy')>-1) {
+    // Buyflow pages
+    _satellite.track("Buyflow_Custom_Page_Load");
+} else if (_satellite.getVar("DataLayer : primaryCategory final").toLowerCase().indexOf("local") > -1) {
+    // Local pages
+    _satellite.track("Local_Custom_Page_Load");
+}
+

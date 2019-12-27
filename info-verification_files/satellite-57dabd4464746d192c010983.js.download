@@ -1,0 +1,233 @@
+var _UrCapture = _UrCapture || [];
+       
+_UrCapture.push(['_id', '2cd43fcc43075081840a8f32ae93be00']);
+_UrCapture.push(['_server', 'https://us2-00000003.userreplay.net']);
+
+        var XhrScrubRules = [
+            {key: 'creditCardNumber'},
+            {key: 'cvv'},
+            {key: 'ssn1'},
+            {key: 'ssn2'},
+            {key: 'ssn3'},
+            {key: 'expMonth'},
+            {key: 'expYear'},
+            {key: 'birthDate'},
+            {key: 'birthMonth'},
+            {key: 'birthDay'},
+            {key: 'birthYear'},
+            {key: 'serviceAddress'},
+            {key: 'email'},
+            {key: 'greeting'},
+            {key: 'lastName'},
+            {key: 'zipCode'}
+        ];
+
+_UrCapture.push(['_scrub', {
+    ids: ['user',
+        'passwd',
+        '_currentPassword', 
+        '_newUsername', 
+        '_confirmUsername', 
+        'new-account-number', 
+        'new-account-phone-number', 
+        'new-account-name', 
+        'pin', 
+        'pin1', 
+        'pin2', 
+        'pin3', 
+        'card-number', 
+        'card-type-val', 
+        'exp-date-field', 
+        'exp-month', 
+        'exp-year', 
+        'card-holder', 
+        'ccv', 
+        'bill-address1', 
+        'street-additional', 
+        'bill-apt1', 
+        'bill-city', 
+        'bill-state', 
+        'bill-zip',
+        'address',
+        'zip',
+        'bank-holder-name-checking', 
+        'bank-routing-number-checking', 
+        'bank-account-number-checking', 
+        'bank-holder-name-savings', 
+        'bank-routing-number-savings', 
+        'bank-account-number-savings', 
+        'main_0_FirstName', 
+        'main_0_LastName', 
+        'main_0$txt_CardHolder',
+        'main_0$txt_CCV',
+        'main_0$txtAddress1',
+        'main_0$txtApt',
+        'main_0$txtCity',
+        'main_0$txtState',
+        'main_0$txtZip',
+        'main_0$txtPayerName_Chk',
+        'main_0$txtRouting_Chk',
+        'main_0$AccountNumber_Checking',
+        'main_0$txtPayerName_Sav',
+        'main_0$txtRouting_Sav',
+        'main_0$AccountNumber_Savings',
+        'main_1_usersettingsmain_2_txtFirstName', 
+        'main_1_usersettingsmain_2_txtLastName', 
+        'main_1_usersettingsmain_2_txtUserName', 
+        'main_1_usersettingsmain_2_txtPassword',  
+        'main_1_usersettingsmain_2_txtConfirmPassword', 
+        'main_1_usersettingsmain_2_secretQuestionsDropdownList', 
+        'main_1_usersettingsmain_2_txtSecretAnswer', 
+        'contentplaceholder_2__streetNameTxt', 
+        'contentplaceholder_2__aptNumberTxt', 
+        'contentplaceholder_2__zipCodeTxt', 
+        'CPH100PerCol_C025_ctl00_ctl00_C013_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C016_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C015_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C017_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C019_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C020_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C021_ctl00_stateDropDownAbbr', 
+        'CPH100PerCol_C025_ctl00_ctl00_C024_ctl00_ctl00_textBox_write', 
+        'CPH100PerCol_C025_ctl00_ctl00_C023_ctl00_ctl00_textBox_write', 
+        'PH100PerCol_C025_ctl00_ctl00_C025_ctl00_txtPhoneArea', 
+        'CPH100PerCol_C025_ctl00_ctl00_C025_ctl00_txtPhoneExchange', 
+        'CPH100PerCol_C025_ctl00_ctl00_C025_ctl00_txtPhone', 
+        'CPH100PerCol_C025_ctl00_ctl00_C026_ctl00_ctl00_textBox_write', 
+        'contentplaceholder_0_accountInfo_serviceSalutation', 
+        'contentplaceholder_0_accountInfo_salutation', 
+        'contentplaceholder_0_accountInfo_fname', 
+        'contentplaceholder_0_accountInfo_serviceFirstName', 
+        'contentplaceholder_0_accountInfo_lname', 
+        'contentplaceholder_0_accountInfo_serviceLastName', 
+        'contentplaceholder_0_accountInfo_phone', 
+        'contentplaceholder_0_accountInfo_dateOfBirthP_MM', 
+        'contentplaceholder_0_accountInfo_dateOfBirthP_DD', 
+        'contentplaceholder_0_accountInfo_dateOfBirthP_YYYY', 
+        'contentplaceholder_0_accountInfo_email', 
+        'contentplaceholder_0_accountInfo_serviceStreetAddress', 
+        'contentplaceholder_0_accountInfo_serviceUnit', 
+        'contentplaceholder_0_accountInfo_serviceCity', 
+        'contentplaceholder_0_accountInfo_serviceState', 
+        'contentplaceholder_0_accountInfo_serviceZip', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnCC_1', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnCC_2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnCC_3', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_cardnumber', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_expdate', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_expdate2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_holdername', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_cvvnumber', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_address2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_apt2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_city2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_state2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_creditCardDeposit_zip2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnD_1', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnD_2', 
+        'contentplaceholder_0_accountInfo_billingpreference1_ssnD_3',
+        'contentplaceholder_0_accountInfo_billingpreference1_singlessnCC',
+        'contentplaceholder_0_accountInfo_billingpreference1_singlessnD', 
+        'contentplaceholder_0_accountInfo_differentAddress', 
+        'contentplaceholder_0_accountInfo_differentApt', 
+        'contentplaceholder_0_accountInfo_differentCity', 
+        'contentplaceholder_0_accountInfo_differentState', 
+        'contentplaceholder_0_accountInfo_differentZip', 
+        'localizeplaceholder_1__streetNameTxt', 
+        'localizeplaceholder_1__aptNumberTxt', 
+        'localizeplaceholder_1__zipCodeTxt', 
+        '_last_'
+    ],
+    json: [{field: '__xhrpostdata',url: 'https://www.xfinity.com/touchcommerce/touchcommercedetails.aspx',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://www.xfinity.com/Checkout/CreditCheck.cajax',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://www.int.xfinity.com/touchcommerce/touchcommercedetails.aspx',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://www.int.xfinity.com/Checkout/CreditCheck.cajax',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://www.stg.xfinity.com/touchcommerce/touchcommercedetails.aspx',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://www.stg.xfinity.com/Checkout/CreditCheck.cajax',rules: XhrScrubRules},
+           {field: '__xhrpostdata',url: 'https://secure.xfinity.com/user/data',rules: XhrScrubRules} 
+    ]
+}]);
+
+
+_UrCapture.push(['_exclude', {
+    page: [
+        '\\/includes\\/inq\\/inqChat\\.html'
+        ],
+    ajax: ['\\/InviteTriggers',
+           '\\/Secure\\/Preloader\\.aspx',
+           '\\/includes\\/inq\\/inqChat\\.html',
+           '\\/\\/us2-00000003\\.userreplay\\.net',
+           '\\/\\/api\\.iperceptions\\.com\\/InviteTriggers',
+           '\\/touchcommerce\\/touchcommercedetails\\.aspx',
+           '\\/Corporate\\/shop\\/AddressCompletionController\\.cajax',
+           '\\/Localize\\/AddressCompletionController\\.cajax',
+           '\\Checkout\\/ProActiveChat\\.cajax',
+           '\\Checkout\\/AnalyticsController\\.cajax',
+           '\\/Layout\\/Secure\\/AutoPayAjax\\.aspx',
+           '\\/Corporate\\/shop\\/Localization\\.AnalyticsController.cajax',
+           '\\/m\\/Localization\\.AnalyticsController\\.cajax',
+           '\\/m\\/AddressCompletionController\\.cajax',
+           '\\/Secure\\/changeusernameflow',
+           '\\/m\\/AddressCompletionController\\.cajax',
+           '\\/localize\\/Localization\\.AnalyticsController\\.cajax',
+           '\\/m\\/AnalyticsController\\.cajax',
+           '\\/customization\\/AnalyticsController\\.cajax',
+           '\\/upgrade-center\\/AnalyticsController\\.cajax',
+           '\\/AnalyticsController\\.cajax',
+           '\\/error\\/AnalyticsController\\.cajax',
+           '\\/Corporate\\/Learn\\/DigitalCable\\/AddressCompletionController\\.cajax',
+           '\\/Controller\\.cajax',
+           '\\/home-security\\/AnalyticsController\\.cajax', 
+           '\\/home-security\\/InteractionHelper\\.cajax', 
+           '\\/InteractionHelper\\.cajax', 
+           '\\/ShoppingCartController\\.cajax',
+           '\\/\\/elv3-tslogging\\.touchcommerce\\.com\\/tagserver\\/logging\\/log4js',
+           'AnalyticsController\\.cajax',
+           '\\:\\/\\/comcast\\.inq\\.com\\/.*',
+           '\\//comcastcom\\.d1\\.sc\\.omtrdc\\.net\\/.*',
+           '\\//comcast\\.demdex\\.net\\/.*',
+           'SessionController\\.cajax',
+           'ShoppingCartController\\.cajax',
+           'AddressCompletionController\\.cajax',
+           '\\/QueryCompletion\\.cajax',
+           '\\/upgrade-center\\/InteractionHelper\\.cajax',
+           '\\/Corporate\\/Learn\\/DigitalCable\\/InteractionHelper\\.cajax',
+           '\\/error\\/InteractionHelper\\.cajax',
+           '\\/m\\/InteractionHelper\\.cajax',
+           '\\/Checkout\\/InteractionHelper\\.cajax'
+           ]
+}]);
+    
+
+_UrCapture.push(['_autoUpload', false]);
+
+_UrCapture.push(['_uploadTriggers', {
+    ajax: [
+        { url: 'PrepayAccountInformation\\.cajax', delay: 0 },
+        { url: 'AccountInformation\\.cajax', delay: 0 }
+    ]
+}]);
+     
+        
+(function () {
+    var s = document.createElement('script'),
+        t = document.getElementsByTagName('script')[0],
+        u = document.createElement('urscrub');
+        s.type = 'text/javascript';
+        s.async = true;
+        //s.src = '//cdn.userreplay.net/us2431a946a4b7d17778d9c086a94cdd1dd_staging.js';
+  s.src = 'https://cdn.userreplay.net/us2431a946a4b7d17778d9c086a94cdd1dd.js';
+        u.appendChild(s); t.parentNode.insertBefore(u, t); t.parentNode.insertBefore(s, t);
+})();
+
+
+if (window.addEventListener) {
+    window.addEventListener('load', function () {
+       if(typeof UrCapture != "undefined") {
+       window.setTimeout(function () { UrCapture.domUpload({action: 'PAGE', source: true, cookies: true, dimensions: true, headers: false, referrer: true}); }, 1500); 
+   }
+}, false);
+}
+
+
+_satellite.notify('DTM:User Replay - Sitewide v4.1.1');

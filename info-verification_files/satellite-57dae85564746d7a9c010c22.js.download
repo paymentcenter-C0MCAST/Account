@@ -1,0 +1,71 @@
+_satellite.pushAsyncScript(function(event, target, $variables){
+  function createPixel(segment)
+{
+// decode segment string
+var str = segment;
+var decodeSegment = decodeURIComponent(str);
+// add number to propensity in segment array 
+var propArray = decodeSegment.split(";");
+var enumString=[];
+for (var i=0;i<propArray.length;i++)
+{
+var splitKV = propArray[i].split("=");
+var iteration = i+1;
+enumString.push(splitKV[0]+iteration+"="+splitKV[1]);
+dSwap = enumString.join(";");      
+}
+result=dSwap.toString();
+_satellite.notify('DTM String Result:'+result);  
+
+// encode  new segment string
+var newStr = encodeURIComponent(result);
+_satellite.notify('New String:'+newStr);
+// Assemble Google Pixel
+var getList ='';
+var dString ='%3B&amp;data='
+var elements= newStr.split("%3b");
+for (j = 0; j < elements.length; j++) {
+getList += elements[j] + dString;
+}
+var output = getList.substr(0, getList.lastIndexOf(dString)) || getList;
+var pixelSrc="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1023869955/?value=1.000000&label=Nw_KCPfLzQkQg4ic6AM&guid=ON&script=0&data="+output;
+var pixel = document.createElement('img');
+    pixel.style.display = "none";
+    pixel.src = pixelSrc;
+    pixel.width="1";
+    pixel.height="1";
+    pixel.frameborder="0";
+    document.body.appendChild(pixel);
+_satellite.notify('DTM:Pixel Output:'+pixel)
+_satellite.notify('DTM:Decoded Output:'+decodeURIComponent(output))
+// function end  
+}  
+
+var isAAM_rmkt = _satellite.getVar('aam_rmkt');
+var isAAM_sc = _satellite.getVar('aam_sc');
+var isAAM_rlsa = _satellite.getVar('aam_rlsa');
+		
+
+// URL Decoded if necessary
+var decodeAAM_sc = decodeURIComponent(isAAM_sc);  
+var decodeAAM_rmkt = decodeURIComponent(isAAM_rmkt); 
+var decodeAAM_rlsa = decodeURIComponent(isAAM_rlsa);
+
+
+
+if (isAAM_rmkt) {
+ // _satellite.notify('DTM:AAM RMKT Value: '+isAAM_rmkt)
+}
+
+if (isAAM_sc) {
+ // _satellite.notify('DTM:AAM SC Value: '+isAAM_sc)
+}
+
+if (isAAM_rlsa) {
+  _satellite.notify('DTM:AAM RLSA Value: '+isAAM_rlsa)
+  _satellite.notify('DTM:Decoded RLSA:'+decodeAAM_rlsa)
+  createPixel(isAAM_rlsa)  
+  
+}
+_satellite.notify('DTM:Get AAM Cookie Value');
+});
